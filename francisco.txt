@@ -1,0 +1,24 @@
+Caso 1 (C1) -  Emissão de nova receita medicamentosa
+ 
+Ator primário: Médico
+ 
+1. Médico avalia paciente X.
+2. Médico decide pela necessidade de emitir uma nova receita medicamentosa para o paciente X.
+3. Sistema solicita os detalhes necessários para emitir nova receita.
+4. Médico define todos os detalhes necessários, Medicamento, Horário de ingestão, Forma de ingestão, Dose
+5. Sistema registra dados informados pelo Médico
+6. Sistema atribui cada consumo medicamentoso a um determinado turno.
+7. No início de cada turno, os consumos medicamentosos são divididos entre os enfermeiros do turno. -> Isso é separado	
+
+
+Caso 2 (C2) - Emissão de nova dieta
+
+Ator primário: Nutricionista
+
+1. Nutricionista avalia o paciente X.
+2. Nutricionista decide pela necessidade de emitir uma nova dieta para o paciente X.
+3. Sistema solicita os detalhes necessários para emitir nova dieta.
+4. Nutricionista define todos os detalhes necessários: Tipo de comida, horário de ingestão, etc
+5. Sistema registra dados informados pelo Nutricionista
+6. Sistema atribui cada refeição da dieta a um determinado turno.
+7. No início de cada turno, as refeições são divididas entre os enfermeiros do turno.								 

@@ -1,0 +1,137 @@
+Caso 1 (C1) -  Emissão de nova receita medicamentosa
+
+Ator primário: Médico
+
+1. Médico avalia paciente X.
+2. Médico decide pela necessidade de emitir uma nova receita medicamentosa para o paciente X.
+3. Sistema solicita os detalhes necessários para emitir nova receita.
+4. Médico define todos os detalhes necessários, Medicamento, Horário de ingestão, Forma de ingestão, Dose
+5. Sistema registra dados informados pelo Médico
+6. Sistema atribui cada consumo medicamentoso a um determinado turno.
+
+------
+
+Caso 2 (C2) - Informa procedimentos do turno
+
+Ator: Tempo - início de cada turno
+
+1. Sistema atribui os consumos medicamentosos aos enfermeiros do turno.	
+2. Sistema atribui as refeições dos pacientes às enfermeiros do turno.
+------
+
+Caso 3 (C3) - Emissão de uma nova dieta
+
+Ator primário: Nutricionista
+
+1. Nutricionista avalia o paciente X.
+2. Nutricionista decide pela necessidade de emitir uma nova dieta para o paciente X.
+3. Sistema solicita os detalhes necessários para emitir nova dieta.
+4. Nutricionista define todos os detalhes necessários: Tipo de comida, horário de ingestão, etc
+5. Sistema registra dados informados pelo Nutricionista
+6. Sistema atribui cada refeição da dieta a um determinado turno.
+
+------
+
+Caso 4 (C4) - Chegada de um novo paciente
+
+Ator primário: Paciente
+
+1. Recepcionista registra dados do paciente a ser atendido
+2. Sistema atribui um dos médicos disponíveis ao novo paciente.
+
+------
+
+Caso 5 (C5) - Avaliação inicial do paciente
+
+Ator primário: Médico
+
+1. Médico avalia o paciente recém chegado.
+2. Médico registra dados da ficha médica
+3. Sistema registra dados da avaliação da ficha médica do paciente.
+4. Médico finaliza atendimento
+
+Fluxo Alternativo:
+
+4a. Médico considera apropriado internação:
+    1. Médico indica razões para internação
+    2. Sistema atribui um dos quartos disponíveis para o paciente.
+
+
+
+
+
+------
+
+Caso 6 (C6) - Paciente tem alta
+
+Ator Primário - Médico
+
+1. Médico registra que a ocupação do quarto por parte do paciente chegou ao fim 
+2. Sistema atualiza o status paciente no sistema e sua estadia no hospital é adicionada a ficha médica 
+
+------
+
+Caso 7 (C7) - Paciente é trocado de quarto
+
+Ator primário - Médico
+
+1. Médico registra que a ocupação do quarto atual chegou ao fim
+2. Sistema inicia uma nova ocupação de quarto, relativa ao novo quarto
+
+------
+
+Caso 8 (C8) - Enfermeiro dá uma refeição a um paciente
+
+Ator primário - Enfermeiro
+
+1. Enfermeiro registra refeição
+2. Sistema atualiza o status da efetuação desse consumo, juntamente com a data.
+
+------
+
+Caso 9 (C9) - Enfermeiro aplica um medicamento a um paciente
+
+Ator primário - Enfermeiro
+
+1. Enfermeiro registra aplicação de medicamento
+2. Sistema atualiza o status desse consumo medicamentoso, juntamente com a data.
+
+------
+
+Caso 10 (C10) - Demissão de um enfermeiro
+
+Ator primário - Gerente do hospital
+
+1. Gerente registra que o enfermeiro é removido do quadro do hospital
+2. Sistema retira todos os consumos de medicamentos e refeições que antes era efetuado por esse enfermeiro são redistribuídos entre os enfermeiros do mesmo turno.
+
+------
+
+Caso 11 (C11) - Demissão de um médico
+
+Ator primário - Gerente do hospital
+
+1. Gerente registra que médico é removido da equipe do hospital
+2. Sistema retira pacientes que estavam sob responsabilidade desse médico são distribuídos para outros médicos.
+2. Sistema retira receitas medicamentosas feitas por esse médico são distribuídas por outros médicos da equipe.
+
+------
+
+Caso 12 (C12) - Paciente sofre uma intercorrência
+
+Ator primário - Enfermeiro
+
+1. Médico responsável é acionado
+2. Algum dos enfermeiros do turno é acionado
+
+------
+
+Caso 13 (C13) - Paciente vem a óbito
+
+Ator primário - Enfermeiro
+
+1. Autoridades legais são notificadas
+2. Familiares são chamados para os procedimentos fúnebres
+
+------
+

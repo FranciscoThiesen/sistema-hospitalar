@@ -1,0 +1,57 @@
+// Cool Class Diagram
+// ------------------
+
+[Médico Responsável|+CRM: int;+Especialidade: string|cadastra_médico(); demite_medico(); retorna_medicos_disponiveis()]
+
+[Nutricionista Responsável|+id: int|cadastra_nutricionista(); demite_nutricionista(); retorna_nutricionistas_disponiveis()]
+
+[Enfermeiro Responsável|+id: int| cadastra_enfermeiro(); remove_enfermeiro(); atribui_turnos()]
+
+[Paciente|+id: int;+ficha_medica: string;+teve_alta: bool|cria_paciente(); interna_paciente(); libera_paciente(); atualiza_ficha_medica()]
+
+[Turno|+hora_inicio: date; +hora_fim: date;+dia_da_semana: string|inicia_turno(); finaliza_turno(); retorna_enfermeiros_disponíveis()]
+
+[Ocupação Quarto|+id: int; +data_inicio: date; +data_fim: date|inicia_ocupação(); finaliza_ocupação()]
+
+[Quarto|+id: int|ocupa_quarto(); libera_quarto(); retorna_quartos_livres()]
+
+[Receita|+id: string|cria_receita(); altera_medico_responsável()]
+
+[Preescrição Medicamento|+id: int; +dose: double]
+
+[Medicamento|+id: int; +nome: string; +bula: string]
+
+[Consumo Medicamento|+forma_ingestao: string; +hora: date; +efetivação_consumo: bool|cria_consumo();confirmação_do_consumo()]
+
+[Dieta|+tipo_comida: string; +restrições_alimentares: string; +frequência_refeições: Array Date|cria_dieta(); altera_nutricionista_responsável()]
+
+[Consumo dieta|+forma_ingestao: string; +efetivação_consumo: bool; +horário: date|cria_consumo(); confirma_do_consumo()]
+
+[Médico Responsável]<1-n>[Paciente]
+
+[Nutricionista Responsável]<1-n>[Dieta]
+
+
+[Dieta]<1-n>[Consumo dieta]
+
+
+[Turno]<1-n>[Consumo dieta]
+[Enfermeiro Responsável]<n-1>[Turno]
+
+[Turno]<1-n>[Consumo Medicamento]
+
+
+[Consumo Medicamento]<n-1>[Preescrição Medicamento]
+[Preescrição Medicamento]<1-n>[Medicamento]
+
+[Receita]<1-n>[Preescrição Medicamento]
+
+[Receita]<n-1>[Paciente]
+
+[Paciente]<1-1>[Dieta]
+
+[Receita]<n-1>[Médico Responsável]
+
+[Paciente]<0..1-1>[Ocupação Quarto]
+
+[Ocupação Quarto]<n-1>[Quarto]
