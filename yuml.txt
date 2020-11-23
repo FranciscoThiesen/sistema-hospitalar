@@ -42,7 +42,7 @@
 
 
 [Consumo Medicamento]<n-1>[Preescrição Medicamento]
-[Preescrição Medicamento]<1-n>[Medicamento]
+[Preescrição Medicamento]<1-1>[Medicamento]
 
 [Receita]<1-n>[Preescrição Medicamento]
 
@@ -52,6 +52,6 @@
 
 [Receita]<n-1>[Médico Responsável]
 
-[Paciente]<0..1-1>[Ocupação Quarto]
+[Paciente]<0..1-0..1>[Ocupação Quarto]
 
 [Ocupação Quarto]<n-1>[Quarto]

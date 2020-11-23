@@ -2,23 +2,25 @@
 #define OCUPACAO_QUARTO_H
 #include <ctime>
 #include <cassert>
+#include <iostream>
 #include "quarto.hpp"
 
+using namespace std;
+
 struct ocupacao_quarto {
-    time_t data_inicio, data_fim;
-    int id_quarto;
-    int id_paciente;
+    int id, id_paciente;
+    int data_inicio, data_fim;
+    quarto quarto_ocupado;
 
-    ocupacao_quarto(quarto& Q) {
-        assert(Q.status_de_ocupacao == false);
-        assert(quarto::quartos_livres.find(Q.id) != quarto::quartos_livres.end());
-
-        Q.ocupa_quarto();
-        id_quarto = Q.id;
+    ocupacao_quarto() {} 
+    // Em tempo de criação, temos que saber o quarto + id_paciente + id_ocupação
+    ocupacao_quarto(int id, int id_paciente, quarto Q) : id(id), id_paciente(id_paciente) {
+        assert(Q.ocupado == false);
+        Q.ocupado = true;
+        data_fim = -1;
+        data_inicio = (int) time(NULL);
+        quarto_ocupado = Q;
     }
-    
-    void inicia_ocupacao() { data_inicio = time(0); }
-    void finaliza_ocupacao() { data_fim = time(0); }
 };
 
 #endif

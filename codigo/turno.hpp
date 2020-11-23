@@ -1,14 +1,18 @@
 #ifndef TURNO_H
 #define TURNO_H
-#include <string>
+#include <ctime>
 
+/*
 struct turno {
-    int hora_inicio, hora_fim;
-    std::string dia_da_semana;
-     
+    int id;
+    time_t hora_inicio, hora_fim; 
     turno() {}
-    turno(int hora_inicio, int hora_fim, std::string dia_da_semana) : hora_inicio(hora_inicio), hora_fim(hora_fim), dia_da_semana(dia_da_semana) {}
+    turno(int id, time_t hora_inicio, time_t hora_fim) : id(id), hora_inicio(hora_inicio), hora_fim(hora_fim) 
+    {
+    
+    }
 };
+*/
 
 // Persistência json
 // Uma class controladora para cada um dos casos de uso

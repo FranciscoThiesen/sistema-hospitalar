@@ -1,0 +1,1 @@
+{"medicos":[{"chave":2,"valor":{"CRM":2,"especialidades":["cirurgião"],"lista_pacientes":[{"ficha_medica":"Homem. 15 Anos, com Covid","id":1,"id_medico_responsavel":2,"nome":"Caio do Nascimento","receitas_medicas":[],"teve_alta":false}],"receitas_medicas":[]}},{"chave":1,"valor":{"CRM":1,"especialidades":["cardiologista"],"lista_pacientes":[],"receitas_medicas":[]}}]}

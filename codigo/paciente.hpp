@@ -5,26 +5,22 @@
 #include <optional>
 #include "quarto.hpp"
 #include "receita.hpp"
-struct paciente {
-    int id;
-    std::string ficha_medica;
-    bool teve_alta;
-    std::optional< quarto > quarto_ocupado;
-    
+#include "ocupacao_quarto.hpp"
+#include "dieta.hpp"
+using namespace std;
 
+struct paciente {
+    int id, id_medico_responsavel;
+    string ficha_medica, nome;
+    bool teve_alta;
+    optional< ocupacao_quarto > ocupacao_paciente;
+    optional< dieta > dieta_paciente;    
+    vector< receita > receitas_medicas;
+    
     paciente() {}
-    paciente(int id, std::string ficha_medica) : id(id), ficha_medica(ficha_medica) {
+    paciente(int id, int id_medico_responsavel, string ficha_medica, string nome) : id(id), id_medico_responsavel(id_medico_responsavel), ficha_medica(ficha_medica), nome(nome) {
         teve_alta = false; 
     }
-    
-    void atualiza_ficha_medica(std::string& nova_ficha) {
-        ficha_medica = nova_ficha;
-    }
 };
-
-// Adicionar quarto
-// Consertar o diagrama
-// Adicionar vetor de receitas
-// 
 
 #endif

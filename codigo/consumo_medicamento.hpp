@@ -2,19 +2,23 @@
 #define CONSUMO_MEDICAMENTO_H
 #include <string>
 #include <ctime>
+#include <optional>
 
 struct consumo_medicamento 
 {
+    int id, id_prescricao;
     std::string forma_ingestao;
-    time_t hora_do_consumo;
     bool efetivacao_consumo;
+    int id_turno;
+    std::optional<int> id_enfermeiro;
 
     consumo_medicamento() {}
-    consumo_medicamento(std::string forma_ingestao, time_t hora_do_consumo) : forma_ingestao(forma_ingestao), hora_do_consumo(hora_do_consumo) 
+    consumo_medicamento(int id, int id_prescricao, std::string forma_ingestao, int id_turno) : id(id), id_prescricao(id_prescricao), forma_ingestao(forma_ingestao), id_turno(id_turno) 
     {
         efetivacao_consumo = false; 
     }
     
+
     void confirmacao_do_consumo() 
     {
         efetivacao_consumo = true;
